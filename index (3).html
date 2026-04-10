@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NCCU Moot Court - Inter-School Competition Interest Form</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --maroon: #6B1E2A;
+  --maroon-dark: #4A1019;
+  --maroon-light: #8B2535;
+  --gold: #C9A84C;
+  --gold-light: #E8C96A;
+  --grey: #5A5A5A;
+  --light-bg: #F7F4F0;
+  --border: #E0D8D0;
+  --text: #1A1A1A;
+  --muted: #888;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"DM Sans",sans-serif;background:var(--light-bg);color:var(--text);padding-bottom:80px;}
+.hero{background:var(--maroon);position:relative;overflow:hidden;}
+.hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 40px,rgba(201,168,76,0.04) 40px,rgba(201,168,76,0.04) 41px);}
+.hero-inner{position:relative;max-width:740px;margin:0 auto;padding:56px 40px 48px;}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+.hero h1{font-family:"EB Garamond",serif;font-size:clamp(30px,5vw,46px);font-weight:700;color:#fff;line-height:1.15;margin-bottom:12px;}
+.hero-sub{font-family:"EB Garamond",serif;font-size:18px;font-style:italic;color:var(--gold-light);margin-bottom:16px;}
+.hero-meta{font-size:13px;color:rgba(255,255,255,0.55);}
+.gold-bar{height:4px;background:linear-gradient(90deg,var(--gold),var(--gold-light),var(--gold));}
+.prog-wrap{background:rgba(107,30,42,0.2);height:3px;}
+.prog-bar{height:3px;background:var(--gold);width:0%;transition:width 0.4s;}
+.wrap{max-width:740px;margin:0 auto;padding:0 20px;}
+.card{background:#fff;border-radius:4px;border:1px solid var(--border);box-shadow:0 2px 12px rgba(107,30,42,0.08);margin-top:20px;overflow:hidden;}
+.ch{background:var(--maroon);padding:14px 28px;display:flex;align-items:center;gap:12px;}
+.cn{width:28px;height:28px;border-radius:50%;background:var(--gold);color:var(--maroon-dark);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ch h2{font-family:"EB Garamond",serif;font-size:17px;font-weight:600;color:#fff;letter-spacing:0.5px;text-transform:uppercase;}
+.ch-sub{font-size:12px;color:var(--gold-light);font-style:italic;margin-left:auto;white-space:nowrap;}
+.cb{padding:28px;}
+.sl{font-family:"EB Garamond",serif;font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--maroon);margin:24px 0 14px;padding-bottom:6px;border-bottom:2px solid var(--gold);}
+.sl:first-child{margin-top:0;}
+.fg{margin-bottom:18px;}
+.r2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px;}
+.r3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:18px;}
+label.fl{display:block;font-size:13px;font-weight:500;color:var(--grey);margin-bottom:6px;}
+label.fl .req{color:var(--maroon);}
+input[type=text],input[type=email],input[type=url],textarea,select{width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:3px;font-family:"DM Sans",sans-serif;font-size:14px;color:var(--text);background:#fff;transition:border-color 0.15s,box-shadow 0.15s;outline:none;-webkit-appearance:none;appearance:none;}
+input:focus,textarea:focus,select:focus{border-color:var(--maroon);box-shadow:0 0 0 3px rgba(107,30,42,0.1);}
+textarea{resize:vertical;min-height:72px;}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B1E2A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;cursor:pointer;}
+.pill-grp{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px;}
+.pill{padding:8px 20px;border:1.5px solid var(--border);border-radius:3px;font-size:13px;font-weight:500;color:var(--grey);cursor:pointer;transition:all 0.15s;user-select:none;}
+.pill:hover{border-color:var(--maroon);color:var(--maroon);}
+.pill.on{border-color:var(--maroon);background:var(--maroon);color:#fff;}
+.tt{width:100%;border-collapse:collapse;font-size:13px;}
+.tt thead tr{background:var(--maroon);}
+.tt thead th{padding:10px 12px;text-align:left;color:#fff;font-size:12px;font-weight:600;letter-spacing:0.5px;}
+.tt tbody tr:nth-child(even){background:#faf8f6;}
+.tt tbody td{padding:7px 8px;border-bottom:1px solid var(--border);}
+.tt tbody td.ml{font-weight:600;font-size:11px;color:var(--maroon);text-transform:uppercase;letter-spacing:0.5px;width:60px;}
+.tt input,.tt select{padding:7px 10px;font-size:13px;}
+.tt select{padding:7px 28px 7px 10px;}
+.chip-grid{display:flex;flex-wrap:wrap;gap:8px;}
+.chip{display:inline-flex;align-items:center;padding:7px 14px;border:1.5px solid var(--border);border-radius:3px;font-size:13px;font-weight:500;color:var(--grey);cursor:pointer;transition:all 0.15s;user-select:none;}
+.chip:hover{border-color:var(--maroon);color:var(--maroon);}
+.chip.on{border-color:var(--maroon);background:var(--maroon);color:#fff;}
+.cb-blk{padding-top:24px;margin-top:24px;border-top:2px solid var(--border);}
+.cb-blk:first-child{padding-top:0;margin-top:0;border-top:none;}
+.badge{display:inline-flex;align-items:center;gap:8px;background:var(--maroon);color:#fff;padding:4px 14px 4px 8px;border-radius:2px;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px;}
+.badge-n{width:22px;height:22px;background:var(--gold);color:var(--maroon-dark);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;}
+.sub-row{margin-top:28px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.sub-note{font-size:12px;color:var(--muted);font-style:italic;}
+.btn-sub{background:var(--maroon);color:#fff;border:none;padding:13px 36px;font-family:"DM Sans",sans-serif;font-size:14px;font-weight:600;border-radius:3px;cursor:pointer;transition:background 0.2s,transform 0.1s,box-shadow 0.2s;box-shadow:0 2px 8px rgba(107,30,42,0.3);}
+.btn-sub:hover{background:var(--maroon-light);box-shadow:0 4px 16px rgba(107,30,42,0.35);transform:translateY(-1px);}
+.btn-sub:disabled{opacity:0.6;cursor:not-allowed;transform:none;}
+.btn-csv{background:transparent;color:var(--maroon);border:1.5px solid var(--maroon);padding:10px 20px;font-family:"DM Sans",sans-serif;font-size:13px;font-weight:600;border-radius:3px;cursor:pointer;transition:all 0.2s;}
+.btn-csv:hover{background:var(--maroon);color:#fff;}
+.success{display:none;position:fixed;inset:0;background:rgba(74,16,25,0.95);z-index:100;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:40px;}
+.success.show{display:flex;}
+.success-ico{width:72px;height:72px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:32px;margin-bottom:24px;}
+.success h2{font-family:"EB Garamond",serif;font-size:36px;color:#fff;margin-bottom:12px;}
+.success p{font-size:16px;color:rgba(255,255,255,0.7);max-width:420px;line-height:1.6;}
+.btn-rst{margin-top:28px;background:var(--gold);color:var(--maroon-dark);border:none;padding:12px 28px;font-family:"DM Sans",sans-serif;font-size:14px;font-weight:700;border-radius:3px;cursor:pointer;}
+.footer{max-width:740px;margin:28px auto 0;padding:0 20px;display:flex;justify-content:space-between;font-size:12px;color:var(--muted);}
+@media(max-width:600px){.hero-inner{padding:36px 20px 32px;}.cb{padding:20px 16px;}.r2,.r3{grid-template-columns:1fr;}.ch-sub{display:none;}.sub-row{flex-direction:column;align-items:flex-start;}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">NCCU School of Law &nbsp;&middot;&nbsp; Moot Court Board</div>
+    <h1>Inter-School Competition<br>Interest Form</h1>
+    <div class="hero-sub">2026&ndash;2027 Academic Year</div>
+    <div class="hero-meta">Rank your top three competition choices &nbsp;&middot;&nbsp; Complete all available fields &nbsp;&middot;&nbsp; Return to the Vice Chair of Interschool Competitions</div>
+  </div>
+  <div class="gold-bar"></div>
+  <div class="prog-wrap"><div class="prog-bar" id="progBar"></div></div>
+</div>
+
+<div class="wrap">
+<form id="mf" novalidate>
+
+  <div class="card">
+    <div class="ch"><div class="cn">1</div><h2>Submitter Information</h2></div>
+    <div class="cb">
+      <div class="r2">
+        <div class="fg"><label class="fl">Full Name <span class="req">*</span></label><input type="text" name="submitter_name" placeholder="First Last" required></div>
+        <div class="fg"><label class="fl">Email Address <span class="req">*</span></label><input type="email" name="submitter_email" placeholder="you@nccu.edu" required></div>
+      </div>
+      <div class="fg">
+        <label class="fl">Class Year <span class="req">*</span></label>
+        <div class="pill-grp" id="pg">
+          <div class="pill" data-v="2L">2L</div>
+          <div class="pill" data-v="3L">3L</div>
+          <div class="pill" data-v="3LE">3LE</div>
+          <div class="pill" data-v="4LE">4LE</div>
+        </div>
+        <input type="hidden" name="class_year" id="cyi">
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch"><div class="cn">2</div><h2>Team Members</h2><span class="ch-sub">Include yourself &middot; Up to 4</span></div>
+    <div class="cb">
+      <p style="font-size:13px;color:var(--muted);font-style:italic;margin-bottom:16px;">List all members you intend to compete with, including yourself.</p>
+      <div style="overflow-x:auto;">
+        <table class="tt">
+          <thead><tr><th></th><th>Full Name</th><th>Email Address</th><th>Class Year When Competing</th></tr></thead>
+          <tbody>
+            <tr><td class="ml">M1</td><td><input type="text" name="m1_name" placeholder="Full name"></td><td><input type="email" name="m1_email" placeholder="Email"></td><td><select name="m1_class"><option value="">Select</option><option>2L</option><option>3L</option><option>3LE</option><option>4LE</option></select></td></tr>
+            <tr><td class="ml">M2</td><td><input type="text" name="m2_name" placeholder="Full name"></td><td><input type="email" name="m2_email" placeholder="Email"></td><td><select name="m2_class"><option value="">Select</option><option>2L</option><option>3L</option><option>3LE</option><option>4LE</option></select></td></tr>
+            <tr><td class="ml">M3</td><td><input type="text" name="m3_name" placeholder="Full name"></td><td><input type="email" name="m3_email" placeholder="Email"></td><td><select name="m3_class"><option value="">Select</option><option>2L</option><option>3L</option><option>3LE</option><option>4LE</option></select></td></tr>
+            <tr><td class="ml">M4</td><td><input type="text" name="m4_name" placeholder="Full name"></td><td><input type="email" name="m4_email" placeholder="Email"></td><td><select name="m4_class"><option value="">Select</option><option>2L</option><option>3L</option><option>3LE</option><option>4LE</option></select></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch"><div class="cn">3</div><h2>Areas of Interest</h2><span class="ch-sub">Select all that apply</span></div>
+    <div class="cb">
+      <p style="font-size:13px;color:var(--muted);font-style:italic;margin-bottom:18px;">Select all subject matter areas you are interested in competing in. This helps the board match you with competitions that fit your interests.</p>
+      <div class="chip-grid" id="cg">
+        <div class="chip" data-v="General Appellate Advocacy">General Appellate Advocacy</div>
+        <div class="chip" data-v="Constitutional Law">Constitutional Law</div>
+        <div class="chip" data-v="Civil Rights Law">Civil Rights Law</div>
+        <div class="chip" data-v="International Law">International Law</div>
+        <div class="chip" data-v="Criminal Law">Criminal Law</div>
+        <div class="chip" data-v="IP / Entertainment Law">IP / Entertainment Law</div>
+        <div class="chip" data-v="Labor &amp; Employment Law">Labor &amp; Employment Law</div>
+        <div class="chip" data-v="Environmental / Energy Law">Environmental / Energy Law</div>
+        <div class="chip" data-v="Tax Law">Tax Law</div>
+        <div class="chip" data-v="Immigration Law">Immigration Law</div>
+        <div class="chip" data-v="Health Law">Health Law</div>
+        <div class="chip" data-v="Family Law">Family Law</div>
+        <div class="chip" data-v="Corporate &amp; Securities Law">Corporate &amp; Securities Law</div>
+        <div class="chip" data-v="Bankruptcy Law">Bankruptcy Law</div>
+        <div class="chip" data-v="Military Law">Military Law</div>
+        <div class="chip" data-v="Veterans Law">Veterans Law</div>
+        <div class="chip" data-v="Sports Law">Sports Law</div>
+        <div class="chip" data-v="Gaming Law">Gaming Law</div>
+        <div class="chip" data-v="Telecommunications Law">Telecommunications Law</div>
+        <div class="chip" data-v="Evidence Law">Evidence Law</div>
+        <div class="chip" data-v="Elder Law">Elder Law</div>
+        <div class="chip" data-v="Admiralty / Maritime Law">Admiralty / Maritime Law</div>
+      </div>
+      <input type="hidden" name="areas_of_interest" id="ai">
+      <div class="fg" style="margin-top:18px;"><label class="fl">Other areas not listed above</label><input type="text" name="interest_other" placeholder="e.g., Technology Law, AI &amp; Emerging Tech..."></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch"><div class="cn">4</div><h2>Competition Choices</h2><span class="ch-sub">Rank 1&ndash;3</span></div>
+    <div class="cb">
+
+      <div class="cb-blk">
+        <div class="badge"><div class="badge-n">1</div>First Choice</div>
+        <div class="sl">Competition Details</div>
+        <div class="fg"><label class="fl">Competition Name <span class="req">*</span></label><input type="text" name="c1_name" placeholder="e.g., Philip C. Jessup International Law Moot Court Competition" required></div>
+        <div class="r2">
+          <div class="fg"><label class="fl">Competition Topic / Subject Matter</label><input type="text" name="c1_topic" placeholder="e.g., International Law"></div>
+          <div class="fg"><label class="fl">Sponsoring Firm or Organization</label><input type="text" name="c1_sponsor" placeholder="e.g., ILSA"></div>
+        </div>
+        <div class="r3">
+          <div class="fg"><label class="fl">Competition Website</label><input type="text" name="c1_website" placeholder="https://..."></div>
+          <div class="fg"><label class="fl">Cost Per Team</label><input type="text" name="c1_cost" placeholder="e.g., $200"></div>
+          <div class="fg"><label class="fl">Team Members Allowed</label><input type="text" name="c1_team_size" placeholder="e.g., 2-3"></div>
+        </div>
+        <div class="sl">Key Dates</div>
+        <div class="r2">
+          <div class="fg"><label class="fl">Problem Release Date</label><input type="text" name="c1_problem_release" placeholder="MM/DD/YYYY or TBD"></div>
+          <div class="fg"><label class="fl">Registration Deadline</label><input type="text" name="c1_reg_deadline" placeholder="MM/DD/YYYY or TBD"></div>
+        </div>
+        <div class="r2">
+          <div class="fg"><label class="fl">Brief / Memorial Due Date</label><input type="text" name="c1_brief_due" placeholder="MM/DD/YYYY or TBD"></div>
+          <div class="fg"><label class="fl">Oral Argument Date(s)</label><input type="text" name="c1_oral_arg" placeholder="MM/DD/YYYY or TBD"></div>
+        </div>
+        <div class="fg"><label class="fl">Additional Dates &amp; Notes</label><textarea name="c1_notes" placeholder="Any other important dates, notes, or requirements..."></textarea></div>
+        <div class="sl">Round Locations</div>
+        <div class="r2">
+          <div class="fg"><label class="fl">Regional Round Location</label><input type="text" name="c1_regional" placeholder="City, State or TBD"></div>
+          <div class="fg"><label class="fl">Final Round Location</label><input type="text" name="c1_final" placeholder="City, State or TBD"></div>
+        </div>
+      </div>
+
+      <div class="cb-blk">
+        <div class="badge"><div class="badge-n">2</div>Second Choice</div>
+        <div class="sl">Competition Details</div>
+        <div class="fg"><label class="fl">Competition Name</label><input type="text" name="c2_name" placeholder="Competition name"></div>
+        <div class="r2">
+          <div class="fg"><label class="fl">Competition Topic / Subject Matter</label><input type="text" name="c2_topic" placeholder="Subject area"></div>
+          <div class="fg"><label class="fl">Sponsoring Firm or Organization</label><input type="text" name="c2_sponsor" placeholder="Sponsor"></div>
+        </div>
+        <div class="r3">
+          <div class="fg"><label class="fl">Competition Website</label><input type="text" name="c2_website" placeholder="https://..."></div>
+          <div class="fg"><label class="fl">Cost Per Team</label><input type="text" name="c2_cost" placeholder="e.g., $200"></div>
+          <div class="fg"><label class="fl">Team Members Allowed</label><input type="text" name="c2_team_size" placeholder="e.g., 2-3"></div>
+        </div>
+        <div class="sl">Key Dates</div>
+        <div class="r2">
+          <div class="fg"><label class="fl">Problem Release Date</label><input type="text" name="c2_problem_release" placeholder="MM/DD/YYYY or TBD"></div>
+          <div class="fg"><label class="fl">Registration Deadline</label><input type="text" name="c2_reg_deadline" placeholder="MM/DD/YYYY or TBD"></div>
+        </div>
+        <div class="r2">
+          <div class="fg"><label class="fl">Brief / Memorial Due Date</label><input type="text" name="c2_brief_due" placeholder="MM/DD/YYYY or TBD"></div>
+          <div class="fg"><label class="fl">Oral Argument Date(s)</label><input type="text" name="c2_oral_arg" placeholder="MM/DD/YYYY or TBD"></div>
+        </div>
+        <div class="fg"><label class="fl">Additional Dates &amp; Notes</label><textarea name="c2_notes" placeholder="Any other important dates, notes, or requirements..."></textarea></div>
+        <div class="sl">Round Locations</div>
+        <div class="r2">
+          <div class="fg"><label class="fl">Regional Round Location</label><input type="text" name="c2_regional" placeholder="City, State or TBD"></div>
+          <div class="fg"><label class="fl">Final Round Location</label><input type="text" name="c2_final" placeholder="City, State or TBD"></div>
+        </div>
+      </div>
+
+      <div class="cb-blk">
+        <div class="badge"><div class="badge-n">3</div>Third Choice</div>
+        <div class="sl">Competition Details</div>
+        <div class="fg"><label class="fl">Competition Name</label><input type="text" name="c3_name" placeholder="Competition name"></div>
+        <div class="r2">
+          <div class="fg"><label class="fl">Competition Topic / Subject Matter</label><input type="text" name="c3_topic" placeholder="Subject area"></div>
+          <div class="fg"><label class="fl">Sponsoring Firm or Organization</label><input type="text" name="c3_sponsor" placeholder="Sponsor"></div>
+        </div>
+        <div class="r3">
+          <div class="fg"><label class="fl">Competition Website</label><input type="text" name="c3_website" placeholder="https://..."></div>
+          <div class="fg"><label class="fl">Cost Per Team</label><input type="text" name="c3_cost" placeholder="e.g., $200"></div>
+          <div class="fg"><label class="fl">Team Members Allowed</label><input type="text" name="c3_team_size" placeholder="e.g., 2-3"></div>
+        </div>
+        <div class="sl">Key Dates</div>
+        <div class="r2">
+          <div class="fg"><label class="fl">Problem Release Date</label><input type="text" name="c3_problem_release" placeholder="MM/DD/YYYY or TBD"></div>
+          <div class="fg"><label class="fl">Registration Deadline</label><input type="text" name="c3_reg_deadline" placeholder="MM/DD/YYYY or TBD"></div>
+        </div>
+        <div class="r2">
+          <div class="fg"><label class="fl">Brief / Memorial Due Date</label><input type="text" name="c3_brief_due" placeholder="MM/DD/YYYY or TBD"></div>
+          <div class="fg"><label class="fl">Oral Argument Date(s)</label><input type="text" name="c3_oral_arg" placeholder="MM/DD/YYYY or TBD"></div>
+        </div>
+        <div class="fg"><label class="fl">Additional Dates &amp; Notes</label><textarea name="c3_notes" placeholder="Any other important dates, notes, or requirements..."></textarea></div>
+        <div class="sl">Round Locations</div>
+        <div class="r2">
+          <div class="fg"><label class="fl">Regional Round Location</label><input type="text" name="c3_regional" placeholder="City, State or TBD"></div>
+          <div class="fg"><label class="fl">Final Round Location</label><input type="text" name="c3_final" placeholder="City, State or TBD"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="sub-row">
+    <button type="button" class="btn-csv" onclick="dlCSV()">&#11015; Download My Responses</button>
+    <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+      <span class="sub-note">Return completed form to the Vice Chair of Interschool Competitions.</span>
+      <button type="submit" class="btn-sub" id="sb">Submit Form</button>
+    </div>
+  </div>
+
+</form>
+</div>
+
+<div class="footer">
+  <span>NCCU School of Law &middot; Moot Court Board &middot; 2026&ndash;27</span>
+  <span>Powered by Formspree</span>
+</div>
+
+<div class="success" id="suc">
+  <div class="success-ico">&#10003;</div>
+  <h2>Form Submitted!</h2>
+  <p>Thank you. Your competition interest form has been received. The Vice Chair of Interschool Competitions will follow up with next steps.</p>
+  <button class="btn-rst" onclick="reset()">Submit Another Response</button>
+</div>
+
+<script>
+// CLASS YEAR PILLS
+document.querySelectorAll('#pg .pill').forEach(function(p){
+  p.addEventListener('click',function(){
+    document.querySelectorAll('#pg .pill').forEach(function(x){x.classList.remove('on');});
+    p.classList.add('on');
+    document.getElementById('cyi').value=p.getAttribute('data-v');
+    prog();
+  });
+});
+
+// INTEREST CHIPS
+document.querySelectorAll('#cg .chip').forEach(function(c){
+  c.addEventListener('click',function(){
+    c.classList.toggle('on');
+    syncChips();
+  });
+});
+function syncChips(){
+  var sel=[];
+  document.querySelectorAll('#cg .chip.on').forEach(function(c){sel.push(c.getAttribute('data-v'));});
+  document.getElementById('ai').value=sel.join(', ');
+}
+
+// PROGRESS
+function prog(){
+  var n=document.querySelector('[name="submitter_name"]').value.trim();
+  var e=document.querySelector('[name="submitter_email"]').value.trim();
+  var cy=document.getElementById('cyi').value;
+  var c1=document.querySelector('[name="c1_name"]').value.trim();
+  var f=[n,e,cy,c1].filter(Boolean).length;
+  document.getElementById('progBar').style.width=Math.round(f/4*100)+'%';
+}
+document.querySelectorAll('input,textarea,select').forEach(function(el){
+  el.addEventListener('input',prog);
+  el.addEventListener('change',prog);
+});
+
+// SUBMIT
+document.getElementById('mf').addEventListener('submit',async function(e){
+  e.preventDefault();
+  var n=document.querySelector('[name="submitter_name"]').value.trim();
+  var em=document.querySelector('[name="submitter_email"]').value.trim();
+  var cy=document.getElementById('cyi').value;
+  var c1=document.querySelector('[name="c1_name"]').value.trim();
+  if(!n||!em||!cy||!c1){alert('Please complete all required fields (marked *) before submitting.');return;}
+  syncChips();
+  var btn=document.getElementById('sb');
+  btn.textContent='Sending...';
+  btn.disabled=true;
+  try{
+    var res=await fetch('https://formspree.io/f/mbdpqvkp',{method:'POST',body:new FormData(this),headers:{'Accept':'application/json'}});
+    if(res.ok){
+      document.getElementById('progBar').style.width='100%';
+      document.getElementById('suc').classList.add('show');
+    } else {
+      var d=await res.json();
+      alert('Error: '+(d.error||'Please try again.'));
+      btn.textContent='Submit Form';btn.disabled=false;
+    }
+  } catch(err){
+    alert('Network error. Please check your connection and try again.');
+    btn.textContent='Submit Form';btn.disabled=false;
+  }
+});
+
+// RESET
+function reset(){
+  document.getElementById('mf').reset();
+  document.querySelectorAll('.pill').forEach(function(p){p.classList.remove('on');});
+  document.querySelectorAll('.chip').forEach(function(c){c.classList.remove('on');});
+  document.getElementById('cyi').value='';
+  document.getElementById('ai').value='';
+  document.getElementById('progBar').style.width='0%';
+  document.getElementById('sb').textContent='Submit Form';
+  document.getElementById('sb').disabled=false;
+  document.getElementById('suc').classList.remove('show');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// CSV DOWNLOAD
+function dlCSV(){
+  syncChips();
+  var rows=[['Field','Value']];
+  document.querySelectorAll('input[name],textarea[name],select[name]').forEach(function(el){
+    rows.push([el.name.replace(/_/g,' '),el.value]);
+  });
+  var csv=rows.map(function(r){return r.map(function(c){return '"'+String(c).replace(/"/g,'""')+'"';}).join(',');}).join('\n');
+  var a=document.createElement('a');
+  a.href='data:text/csv;charset=utf-8,'+encodeURIComponent(csv);
+  a.download='NCCU_Competition_Interest_Form.csv';
+  a.click();
+}
+</script>
+</body>
+</html>
